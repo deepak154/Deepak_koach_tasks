@@ -1,0 +1,36 @@
+<!-- Home Page -->
+<%- include('../includes/head.ejs') %>
+<link rel = "stylesheet" href = "/css/form.css">
+<link rel = "stylesheet" href = "/css/auth.css">
+</head>
+<body>
+	<main>
+		<div class="grid">
+			<article class="card product-item">
+				<div class="card__image">
+					<section class="login-form" >
+						<h1 class=" form-control"><u>Lo</u>gin</h1>
+						<div class="form-control">
+						       <input
+						       type = "email" 
+						       name="email" 
+						       placeholder="Enter email id"
+						       id="emails" >
+					       </div>
+					       <div class="form-control">
+						       <input
+						       type ="password" 
+						       name = "password" 
+						       placeholder="Enter password"
+						       id ="passwords" >
+					       </div>
+					       <button class="btn" id = "login">LogIn</button>
+					</section>
+				</div>
+			</article>
+		</div>  
+		
+	</main>
+	<script src="/js/login.js"></script>
+
+<%- include('../includes/end.ejs') %>	

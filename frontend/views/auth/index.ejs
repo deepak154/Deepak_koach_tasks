@@ -1,0 +1,66 @@
+<!-- Home Page -->
+<%- include('../includes/head.ejs') %>
+<link rel = "stylesheet" href = "/css/form.css">
+<link rel = "stylesheet" href = "/css/auth.css">
+</head>
+<body>
+	<main>
+		<div class="grid">	
+			<article class="card product-item">
+				<div class="card__image">
+					<section class="login-form" >
+						<h1 class=" form-control"><u>Lo</u>gin</h1>
+						<div class="form-control">
+						       <input
+						       type = "email" 
+						       name="email" 
+						       placeholder="Enter email id"
+						       id="emails" >
+					       </div>
+					       <div class="form-control">
+						       <input
+						       type ="password" 
+						       name = "password" 
+						       placeholder="Enter password"
+						       id ="passwords" >
+					       </div>
+					       <button class="btn" id = "login">LogIn</button>
+					</section>
+				</div>
+				<div class="vl"></div>
+				<div class="card__image">
+					<section class="login-form">
+						<h1 class=" form-control"><u>Re</u>gister</h1>
+						<div class="form-control">
+						       <input
+						       placeholder=" Enter email id"
+						       type = "email" 
+						       name="email" 
+						       id="email" >
+					       </div>
+					       <div class="form-control">
+						       <input
+						       placeholder=" Enter password"
+						       type ="password" 
+						       name = "password" 
+						       id ="password" >
+					       </div>
+					       <div class="form-control">
+							<input
+							placeholder=" Enter your name"
+							type ="text" 
+							name = "name" 
+							id ="name"
+							pattern="[a-zA-Z][a-zA-Z ]{2,}" required >
+						</div>
+					       <button class="btn" id ="register">Register</button> 
+					</section>
+				</div>
+			</article>
+		</div>  
+		
+	</main>
+	<script src="/js/login.js"></script>
+	<script src="/js/signup.js"></script>
+
+<%- include('../includes/end.ejs') %>	

@@ -5,7 +5,7 @@ const mongoose  = require('mongoose');
 const path = require('path');
 const authRoutes = require('./api/routes/auth');
 
-const MONGODB_URI = 'mongodb+srv://DeepakChatApp:G6!7M3QGkWesJuy@cluster0.87fwb.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
+const MONGODB_URI = 'mongodb+srv://DeepakChatApp:'+'G6!7M3QGkWesJuy'+'@cluster0.87fwb.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
 
 
 const app = express();
@@ -14,6 +14,7 @@ app.set('view engine', 'ejs');
 app.set('views', 'views');
 
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());  
 
 

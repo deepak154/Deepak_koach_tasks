@@ -1,0 +1,27 @@
+.login-form {
+	width: 20rem;
+	max-width: 90%;
+	margin: auto;
+	display: block;
+}
+
+.product-form {
+	width: 20rem;
+	max-width: 90%;
+	margin: auto;
+	display: block;
+}
+
+.product-item {
+	width: fit-content;
+	height: 20rem;
+	max-width: 100%;
+	margin: 1rem;
+	margin-top: 14%;
+	display: flex;
+}
+    
+.vl {
+  border-left: 2px solid lightgrey;
+  height: match-parent;
+}

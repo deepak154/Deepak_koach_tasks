@@ -47,19 +47,19 @@ exports.postLogin = (req, res, next) => {
 };
 
 exports.postSignup = (req, res, next) => {
-	const email = req.body.email;
+	const email =  req.body.email;
 	const password = req.body.password;
-	const name = req.body.name;
+	const name =  req.body.name;
 
 	User.findOne({email: email})
 			.then((userDoc) => {
-				if(userDoc){
-					return res.status(409).json({
-						message: "Email already registered"
-					      });
+			if(userDoc){
+				return res.status(409).json({
+					message: "Email already registered"
+					});
 				}
-
-				return bcrypt.hash(password, 12)
+			else { 
+				bcrypt.hash(password, 12)
 				.then((hashedPassword) => {
 					const user = new User({
 						email: email,
@@ -81,6 +81,7 @@ exports.postSignup = (req, res, next) => {
         				error: err
       					});
 				});
+			}
 		});			
 };
 
