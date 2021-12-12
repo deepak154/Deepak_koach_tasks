@@ -4,6 +4,7 @@ const mongoose  = require('mongoose');
 
 const path = require('path');
 const authRoutes = require('./api/routes/auth');
+const homeRoutes = require('./api/routes/welcome');
 
 const MONGODB_URI = 'mongodb+srv://DeepakChatApp:'+'G6!7M3QGkWesJuy'+'@cluster0.87fwb.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
 
@@ -26,6 +27,7 @@ app.use((req, res, next)=>{
 });
 
 app.use('/user', authRoutes);
+app.use(homeRoutes);
 
 app.use((req, res, next) => {
 	const error = new Error("Not found");

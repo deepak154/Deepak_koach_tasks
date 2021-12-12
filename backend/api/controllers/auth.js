@@ -1,5 +1,6 @@
 const User = require('../models/user');
 
+const jwt = require('jsonwebtoken');
 const bcrypt = require('bcryptjs');
 
 exports.postLogin = (req, res, next) => {
@@ -19,9 +20,21 @@ exports.postLogin = (req, res, next) => {
 			bcrypt.compare(password, user.password)
 				.then((doMatch) => {
 					if (doMatch) {
+						const token =  jwt.sign(
+							{ user_id: user._id, 
+						 	 email: user.email },
+							process.env.JWT_KEY,
+							{
+							  expiresIn: "1h",
+							}
+						);
+						      // save user token
+						      //user.token = token;
 						return res.status(200).json({
-							message:"User logged In"
+							message:"User logged In",
+							token: token
 						});
+
 					}
 
 					console.log("Password is incorrect");

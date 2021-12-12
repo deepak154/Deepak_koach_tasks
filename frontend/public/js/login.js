@@ -50,12 +50,16 @@ var variablesToCheck = [email, password];
   .then(async(res)=>{
     console.log(res);
     const msg = await res.json();
-    return { status: res.status, data : msg.message};
+    return { status: res.status, data : msg.message, token: msg.token};
   })
   .then((result)=>{
     console.log(result);
     if(result.status === 200)
-      { return document.location.href = "http://localhost:3000/home";
+      { alert(result.data);
+        //return document.location.href = "http://localhost:3000/home";
+        document.getElementById('token').value = result.token;
+        const val = document.getElementById('token');
+        return document.getElementById("myform").submit();
       }
       document.getElementById('emails').classList.add("invalid");
 	    document.getElementById('passwords').classList.add("invalid");
